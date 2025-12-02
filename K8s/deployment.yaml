@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Demo-Demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Demo-Demo
+  template:
+    metadata:
+      labels:
+        app: Demo-Demo
+    spec:
+      containers:
+      - name: Demo-Demo
+        image: your-dockerhub-username/Demo-Demo:IMAGE_TAG
+        ports:
+        - containerPort: 8080
